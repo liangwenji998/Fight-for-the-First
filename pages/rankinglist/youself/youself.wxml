@@ -1,0 +1,21 @@
+<view class='body'>
+<view class='clearfix'>
+    <view class='fenshu fr'>{{userInfo.total_score}}分</view>
+    <view class='yonghutouxiang'>
+        <image class='yonghutouxiang' src='{{userInfo.avatar}}'></image>
+    </view>
+    <view class='yonghuming'>{{userInfo.nike_name}}</view>
+</view>
+    <view class='shanchangzhishi'>擅长知识领域:<text wx-if="{{ field == '' }}">尚无擅长领域</text><text>{{field[0].knowledge_area}}</text><text>{{field[1].knowledge_area}}</text><text>{{field[2].knowledge_area}}</text></view>
+    <view class='dengji'><text>答题{{level[0]}}</text>进阶之路</view>
+    <!-- v-for这开始 -->
+    <view class='shanchangzhishi' wx-if="{{ record == '' }}">
+      <text>尚无答题记录</text>
+    </view>
+    <view class='datixiangqing' wx:for="{{record}}" wx:for-item="item" wx:key="{{index}}">
+        <view>{{item.answer_date}}</view>
+        <view class='tixiangqing'>
+            <text>答题: {{item.total_answer_number}}</text><text>累计得分: {{item.day_total_score}}</text><text class='fensezi'>答题{{level[index]}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,20 @@
+<view class='body'>
+  <!-- v-for从这开始 -->
+  <scroll-view class='scroll' scroll-y='true' bindscrolltolower='paging' lower-threshold='5' scroll-top='{{top}}px' style=" max-height:{{height-1}}px">
+    <view class='yonghukuang' wx:key="{{index}}" wx:for="{{list}}" wx:for-item="item" data-id='{{item.id}}' catchtap='details'>
+      <view class=''>
+        <!-- 这边是index -->
+        <text class='paiming'>{{index+1}}</text>
+        <!-- 这是获取数据库里用户头像的部分 -->
+        <image class='yonghutouxiang fl' src='{{item.avatar}}'></image>
+      </view>
+      <view class='yonghuzi'>
+        <view class='yonghuming'>{{item.nike_name}}</view>
+        <view class='fr'>{{level[index]}}
+          <text class='fenshu'>{{item.total_score}}分</text>
+        </view>
+        <view class='chengshi'>{{item.privince}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

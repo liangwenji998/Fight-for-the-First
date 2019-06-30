@@ -1,0 +1,52 @@
+/**index.wxss**/
+.userinfo {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50rpx;
+}
+.img{
+  margin-top: 50rpx;
+  border-radius: 10px;
+  border: 5px outset silver;
+  width: 60%;
+  height: 300rpx;
+}
+.block{
+  text-align: center;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+.userinfo-avatar{
+  margin: 20rpx;
+}
+image{
+  border-radius: 50%;
+  width: 128rpx;
+  height: 128rpx;
+}
+button{
+    color: white;
+    font-size: 16px;
+    background-color: #009A9A;
+    width: 408rpx;
+    height: 105rpx;
+    line-height: 105rpx;
+}
+page{
+    height: 100%;
+}
+.bady{
+    height: 100%;
+    background-color: #2D3F55;
+}
+.brd{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+.bntkuang{
+    margin-top: 50rpx;
+}

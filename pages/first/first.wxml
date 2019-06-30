@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='bady'>
+  <view class="container">
+    <view class="userinfo">
+      <view class='brd'>一起考状元</view>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+      <view class='block' wx:else>
+        <view class="userinfo-avatar"><image src="{{userInfo.avatarUrl}}" mode="cover"></image></view>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <image class='img' src='http://img4.imgtn.bdimg.com/it/u=2643267806,3088281804&fm=26&gp=0.jpg'></image>
+      <view class='bntkuang'>
+        <button bindtap='denglu' wx-if="{{pd == 'true' && hasUserInfo}}"  open-type="getUserInfo"
+    bindgetuserinfo="getuser">人脸登录</button>
+        <button bindtap='zhuce' wx-if="{{pd == 'false' && hasUserInfo}}"   open-type="getUserInfo"
+    bindgetuserinfo="getuser">人脸注册</button>
+      </view>
+    </view>
+  </view>
+</view>

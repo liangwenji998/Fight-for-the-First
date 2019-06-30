@@ -1,0 +1,15 @@
+<view class='body' style='max—height="{{height}}px"'>
+  <view class='yonghuixinxi clearfix'>
+    <image class='yonghutouxiang fl' src='{{userInfo.avatar}}'></image>
+    <view class='dibian'>
+      <view class='yonghuming'>{{userInfo.nike_name}}</view>
+      <text class='dangqiandnengji'>当前等级:</text>
+      <text class='dengji'>答题{{level}}</text>
+      <text class='wenhao' bindtap='level'>?</text>
+      <text class='fenshu'>{{userInfo.total_score}}分</text>
+    </view>
+  </view>
+  <view class='brd'>一起考状元</view>
+  <button class='Administrators' catchtap='administer' >新增试题</button>
+  <button class='Answer' catchtap='dati'>开始答题</button>
+</view>

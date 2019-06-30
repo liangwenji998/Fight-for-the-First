@@ -1,0 +1,8 @@
+<!--pages/denglu/denglu.wxml-->
+<view class='camera'>
+<camera device-position="front" flash="off" binderror="error"></camera>
+</view>
+<view>
+    <view >相似指数：{{msg}}</view>
+</view>
+<button class="btn" bindtap="takePhoto">扫脸登录</button>

@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/questions/administer/administer",
+    "pages/questions/Item_bank/Item_bank",
+    "pages/questions/modify/modify",
+    "pages/questions/questions",
+    "pages/first/first",
+    "pages/questions/ti/ti",
+    "pages/rankinglist/rankinglist",
+    "pages/home/home",
+    "pages/denglu/denglu",
+    "pages/index/index",
+    "pages/rankinglist/youself/youself",
+    "pages/questions/lv/lv"
+  ],
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#268dcd",
+    "list": [
+      {
+        "pagePath": "pages/questions/questions",
+        "iconPath": "pages/images/icon_CSR.png",
+        "selectedIconPath": "pages/images/icon_CSR_HL.png",
+        "text": "试题"
+      },
+      {
+        "pagePath": "pages/rankinglist/rankinglist",
+        "iconPath": "pages/images/icon_CWS.png",
+        "selectedIconPath": "pages/images/icon_CWS_HL.png",
+        "text": "排行榜"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "pages/images/iconfont-18.png",
+        "selectedIconPath": "pages/images/overwork.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2D3F55",
+    "navigationBarTitleText": "状元时代",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,20 @@
+ <!-- camera.wxml相机大小需要从重新设置 -->
+ <camera
+   device-position="front"
+   flash="off"
+   binderror="error"
+   style="width:400rpx; height: 400rpx;   border-radius: 50%; margin: 0 auto ;margin-top:50rpx; "
+ ></camera>
+ <view class='xinxi'>
+  <view class='wenzi'> <text>用户名</text>：<open-data type='usernickName' lang='zh_CN'></open-data></view>
+  <view class='wenzi'> <text>省份</text>：<open-data type='userProvince' lang='zh_CN'></open-data></view>
+  <view class='wenzi'> <text>性别</text>：<open-data type='userGender' lang='zh_CN'></open-data></view>
+</view>
+ <!-- 需要使用 button 来授权登录 -->
+ <view class='clearfix'>
+
+ <!-- 拍照按钮 -->
+ <button  class='btn paizhao' bindtap="takePhoto"> 注册 </button>
+ </view>
+
+
