@@ -44,7 +44,7 @@ Page({
       code: app.globalData.code
     })
     wx.createCameraContext().takePhoto({
-      quality: 'HIGH',
+      quality: 'LOW',
       success: (res) => {
         wx.getFileSystemManager().readFile({
           filePath: res.tempImagePath, //选择图片返回的相对路径
@@ -56,7 +56,6 @@ Page({
               data: {
                 image: res.data,
                 image_type: 'BASE64',
-                liveness_control: 'HIGH',
                 max_face_num: 10,
                 group_id_list: '1149363708' //自己建的用户组id
               },

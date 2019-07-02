@@ -4,7 +4,7 @@ App({
     code: '',
     user: {},
     userInfo: null,
-    http:'http://118.25.156.182:8080/v1/open/',
+    http: 'http://118.25.156.182:8080/v1/open/',
     lev: [
       '已经没有可降的了，加油啊',
       '小白',
@@ -15,10 +15,11 @@ App({
       '榜眼',
       '状元',
       '恭喜你，高中状元'
-      ],
-    index:0,
-    id:'',
-    face:''
+    ],
+    index: 0,
+    id: '',
+    shows:false,
+    face: ''
   },
   onLaunch: function() {
     var that = this
@@ -30,7 +31,7 @@ App({
       }
     })
   },
-  getId(e){
+  getId(e) {
     var that = this
     wx.request({
       url: that.globalData.http + 'three/manager/test1/' + e,
@@ -39,14 +40,14 @@ App({
         'Content-Type': 'application/json'
       },
       success(res) {
-        that.globalData.id=res.data.id;
+        that.globalData.id = res.data.id;
         that.globalData.face = res.data.baidu_token
       }
     })
   },
-  level:function(e){
+  level: function(e) {
     var that = this
-    if( e >= 280 ){
+    if (e >= 280) {
       that.globalData.index = 7
     } else if (e >= 210) {
       that.globalData.index = 6
@@ -72,22 +73,21 @@ App({
       }
     })
   },
-  update(e){
+  update(e) {
     var that = this
     wx.request({
       url: that.globalData.http + 'three/manager/test1/' + that.globalData.code,
-      method:'POST',
-      data:{
-          avatar: e.avatarUrl,
-          nike_name: e.nickName,
-          country: e.country,
-          privince: e.province,
-          city: e.city,
-          gender: e.gender,
-          baidu_token: that.globalData.face,
+      method: 'POST',
+      data: {
+        avatar: e.avatarUrl,
+        nike_name: e.nickName,
+        country: e.country,
+        privince: e.province,
+        city: e.city,
+        gender: e.gender,
+        baidu_token: that.globalData.face,
       },
-      success(res){
-      }
+      success(res) {}
     })
   },
   getUserInfo: function(cb) {
@@ -109,7 +109,7 @@ App({
       })
     }
   },
-  bindGetUserInfo: function(e) { 
+  bindGetUserInfo: function(e) {
     var that = this
     that.globalData.user = e.detail.userInfo
   },

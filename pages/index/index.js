@@ -49,7 +49,7 @@ Page({
     })
     const ctx = wx.createCameraContext()
     ctx.takePhoto({
-      quality: 'high',
+      quality: 'LOW',
       success: (res) => {
         that.setData({
           src: res.tempImagePath //获取图片

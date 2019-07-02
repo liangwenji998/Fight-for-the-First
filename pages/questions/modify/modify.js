@@ -119,8 +119,8 @@ Page({
             options: newOptions
           },
           success(res) {
-            wx.redirectTo({
-              url: '../Item_bank/Item_bank',
+            app.globalData.shows = true
+            wx.navigateBack({
             })
           }
         })

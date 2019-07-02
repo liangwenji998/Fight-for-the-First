@@ -15,28 +15,6 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-    var query = wx.createSelectorQuery();
-    query.select('#search').boundingClientRect()
-    query.exec(function(res) {
-      var x = res[0].height
-      wx.getSystemInfo({
-        success: function(res) {
-          that.setData({
-            scrollHeight: res.windowHeight - x,
-          })
-        }
-      })
-    })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    var that = this
     var stems = that.data.stem
     wx.request({
       url: app.globalData.http + 'one/manager/page',
@@ -81,6 +59,37 @@ Page({
       }
     })
   },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {},
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function(e) {
+    var that = this
+    var query = wx.createSelectorQuery();
+    query.select('#search').boundingClientRect()
+    query.exec(function (res) {
+      var x = res[0].height
+      wx.getSystemInfo({
+        success: function (res) {
+          that.setData({
+            scrollHeight: res.windowHeight - x,
+          })
+        }
+      })
+    })
+    if( app.globalData.shows === true ){
+      that.setData({
+        num: 1,
+        page: true,
+        stem: []
+      })
+      app.globalData.shows = false
+    }
+    that.onLoad()
+  },
   deletes(e) {
     var that = this
     wx.request({
@@ -92,7 +101,7 @@ Page({
           page: true,
           stem: []
         })
-        that.onShow()
+        that.onLoad()
       }
     })
   },
@@ -109,7 +118,7 @@ Page({
       page: true,
       stem: []
     })
-    that.onShow()
+    that.onLoad()
   },
   paging() {
     var that = this
@@ -122,7 +131,7 @@ Page({
       icon: 'loading',
       duration: 20000
     })
-    that.onShow()
+    that.onLoad()
   },
   /**
    * 生命周期函数--监听页面隐藏
