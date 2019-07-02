@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/questions/administer/administer",
     "pages/welcome/welcome",
+    "pages/questions/administer/administer",
     "pages/questions/Item_bank/Item_bank",
     "pages/questions/modify/modify",
     "pages/questions/questions",
